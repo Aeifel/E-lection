@@ -24,7 +24,7 @@
 		}
 	</style>
 </head>
-<body background="../public/images/loginpage.jpeg">
+<body background="/public/images/loginpage.jpeg">
 
 	<script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -45,25 +45,25 @@
 				</div>
 				<br>
 				<div align="center">
-					<span style="font-size: 1.2em;"> Enter organization details to register !</span>
+					<span style="font-size: 1.2em;"> Hey! Enter your details to sign in to your account!</span>
 				</div>
 				<br>
-		        <form method = "POST" action = "/createorg">
+		        <form method = "POST" action = "/homepage">
 				<div width="100px">
-					<input type="text" name="orgname" class="form-control" placeholder="Enter organization name" width="100px" required>
+					<input type="text" name="name" class="form-control" placeholder="Enter username" width="100px" required>
 				</div>
 				<br>
 				<div>
-					<input type="password" name="orgpassword" class="form-control" placeholder="Enter organization password" width="100px" required>
+					<input type="password" name="password" class="form-control" placeholder="Enter password" width="100px" required>
 				</div>
 				<br>
 				<br>
 				<div align="center" style="margin: 0px; width: 100%;">
-					<button class="btn btn-secondary" style="margin: 0px;display: block;width: 100%;">REGISTER AS ORGANIZATION</button>
+					<button class="btn btn-secondary" style="margin: 0px;display: block;width: 100%;">LOG IN</button>
 				</div>
 				<br>
-				<div>Click here to
-					<a href="/homepage" style="color: black;">Go back</a>
+				<div>Don't have an account?
+					<a href="/signup" style="color: black;">Sign Up</a>
 				</div>
 				<div>
 					

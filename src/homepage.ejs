@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <link rel="stylesheet" media="all" href="../bootstrap/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script> -->
+
+		<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+     <style>
+
+	.nav-item{
+		margin: 3px;
+		padding: 10px;
+		border: solid black;
+		border-radius: 15px;
+		display: flex;
+	}
+	.nav-item:hover{
+		background-color: white;
+
+	}
+	.nav-item:hover .material-icons{
+		color: black;
+	}
+	.nav-item:hover a{
+		color: black;
+	}
+	.nav-link{
+		width: 150px;
+	}
+	a{
+		padding: 20px;
+	}
+	a:active{
+		color: white;
+	}
+	a:visited{
+		color: white;
+	}
+	a:link{
+		color: white;
+	}
+	.material-icons{
+		color: white;
+		padding-top: 8px;
+	}
+	.card{
+		margin: 40px;
+		float: left;
+		width: 400px;
+		height: 300px;
+		border-radius: 20px;
+	}
+</style>
+</head>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<body>
+	<div style="display: flex;">
+	<!--Left pane for settings and different pages -->
+	<div style="float: left;border-right: 2px solid;width: 320px;height: 700px;background-color: black;" class="child-1">
+		<div style="height: 100px; margin-top: 30px;" class="child-1-1">
+			<span style="float: top;color: white;padding: 30px;font-size: 2em;height: 100%;; width: 100%">E-lections!</span> 	
+		</div>
+		<ul class="nav flex-column child-1-2" style="padding-top: 50px;">
+			<li class="nav-item">
+				<span class="material-icons">home</span>
+				<a class="nav-link active" aria-current="page" href="">Home</a>
+			</li>
+			<li class="nav-item">
+				<span class="material-icons">badge</span>
+				<a class="nav-link active" aria-current="page" href="/homepage/profile">Profile</a>
+			</li>
+			<li class="nav-item">
+				<span class="material-icons">analytics</span>
+				<a class="nav-link active" aria-current="page" href="/homepage/mypolls">My polls</a>
+			</li>
+			<li class="nav-item">
+				<span class="material-icons">groups</span>
+				<a class="nav-link active" aria-current="page" href="/homepage/organizations">Organizations</a>
+			</li>
+			<li class="nav-item">
+				<span class="material-icons">logout</span>
+				<a class="nav-link active" aria-current="page" href="/login" style="float: left;">Log out</a>
+			</li>
+</ul>
+</div>
+
+<!-- right pane for dashboard-->
+	<div style="display: flex;float: left; width: 100%;height: 100%;flex-direction: column;" class="child-2">
+		<div style="float: top;">
+	        <div style="margin: 20px;float: right;" class='child-2-1'>
+		      <input type="text" placeholder="Search" style="border-radius: 10px;padding: 10px;border: 1px solid;">
+	        </div>
+        </div>
+        <div class="child-2-2">
+	        <div class="card">
+		        <div class="card-body" onclick='window.location = "/createorg"'>
+			        <span> Create organization </span>
+		        </div>
+	        </div>
+	        <div class="card">
+		        <div class="card-body" onclick='window.location = "/createpoll"'>
+			        <span> Create Poll</span>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>
+
+
+</body>

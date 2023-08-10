@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  <style>
+    
+    .parent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      
+      /* width: 75%;  */
+    }
+    .child1 {
+      background-color: yellow;
+      border-radius: 1em;
+      border: 1px solid black;
+      padding: 2em;
+      /* height: 25%;  */
+      width: 45%;
+      min-height: 75%;
+    }
+
+    #Club{
+      display: none;
+      background-color: yellowgreen;
+    }
+    #Sruthilaya, #ChessClub, #Theatron, #Twisters, #Rep {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  <div class = "parent">
+    <div class = "child1">
+      <form action='/createpoll' method='post'> 
+        <table class="table" >
+          <thead>
+            <tr>
+              <th scope="col">Fields</th>
+              <th scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody id = "dhadha">
+            <tr>
+              <td>
+              <label>
+                <span>Name Of Election</span>
+              </label>
+              </td>
+              <td>
+                <input class = "form-control" type ="text" placeholder="Name Of Election" name='name' required/>
+              </td>
+            </tr>
+<!--             <tr>
+              <td>
+                <label>
+                  <span>Type Of Election</span>
+                </label>
+              </td>
+              <td>
+                <select class="form-control" id = "typeOfElection" name = "typeOfElection">
+                  <option value = "Select">Select</option>
+                  <option value = "Club">Club</option>
+                  <option value = "Rep">Rep</option>
+                  <option value = "PL">PL</option>
+                  <option value = "APL">APL</option>
+                </select>
+              </td>
+            </tr> -->
+            <tr class = "Club" id = "Club">
+              <td>
+                <label>
+                  <span>Club Name</span>
+                </label>
+              </td>
+              <td>
+                <select class="form-control" id = "ClubInput" name = "Club">
+                  <option value = "Sruthilaya">Sruthilaya</option>
+                  <option value = "ChessClub">Chess Club</option>
+                  <option value = "Theatron">Theatron</option>
+                  <option value = "Twisters">Twisters</option>
+                </select>
+              </td>
+            </tr>
+            <tr class = "NoOfPositions" id = "NoOfPositions">
+              <td>
+                <label>
+                  <span>Number Of Positions to be elected</span>
+                </label>
+              </td>
+              <td>
+                <!-- <input class = "form-control" id = "numberOfPos" name = "number" type ="number" placeholder="Number Of Positions"/> -->
+                <select class="form-control" id = "numberOfPos" name = "numberOfPos">
+                  <option value = "1">1</option>
+                  <option value = "2">2</option>
+                  <option value = "3">3</option>
+                  <option value = "4">4</option>
+                  <option value = "5">5</option>
+                </select>
+              </td>
+            </tr>
+            <br>
+          </tbody>
+        </table>
+        <button class = "btn btn-primary">Create Poll</button>       
+      </form>
+    </div>
+  </div>   
+  <script>
+    let x = 0;
+    document.getElementById('ClubInput').addEventListener("click", two)
+    document.getElementById('numberOfPos').addEventListener("click", three) 
+    document.getElementById('typeOfElection').addEventListener("click", one)
+    
+    function three (e) {
+      //if(e.code == 'Enter' || 'NumpadEnter') {
+        let no = document.getElementById("numberOfPos").value;
+
+        let dhadha = document.getElementById("dhadha");
+        let sib = document.getElementById("NoOfPositions");
+
+        for(let i = 0; i < x; i++) {
+          let nextSib = sib.nextElementSibling;
+          console.log("This: ", nextSib);
+          dhadha.removeChild(nextSib);
+        }
+        for(let i = no - 1; i >= 0; i-- ) {
+          let tr = document.createElement('tr');
+          // let td1 = document.createElement('td');
+          // let td2 = document.createElement('td');
+          // let label = document.createElement('label')
+          // let span = document.createElement('span');
+          // let input = document.createElement('input');
+         
+          tr.innerHTML = `
+              <td>
+                <label>
+                  <span>Position ${i+1} </span>
+                </label>
+              </td>
+              <td>
+                <input class = "form-control" class = "position" name = "position[${i+1}]" type ="text" placeholder="Enter Position" required/>
+              </td>
+            </tr>
+            <br>
+            </tr>
+          `
+          //parent.appendChild(tr);
+          sib.parentNode.insertBefore(tr, sib.nextSibling);
+        }
+      //}
+        x = no;
+    }
+
+    const arrayType = ['Club', 'Rep', 'PL', 'APL'];
+    const arrayType2 = ['Sruthilaya', 'ChessClub', 'Theatron', 'Twisters'];
+
+    function one () {
+      console.log(document.getElementById('typeOfElection').value);
+      const arrayType2 = ['Sruthilaya', 'ChessClub', 'Theatron', 'Twisters'];
+
+      for(let i = 0; i < arrayType2.length; i++) {
+        let a = document.getElementsByClassName(arrayType2[i]);
+        for(let j = 0; j < a.length; j++) {
+          a[j].style.display = "none"
+        }
+        //console.log("this " ,arrayType2[i])
+      }
+
+      for(let i = 0; i < arrayType.length; i++) {
+        console.log(arrayType[i]);
+        let a = document.getElementsByClassName(arrayType[i]);
+        if (document.getElementById('typeOfElection').value === arrayType[i]) {
+          for(let j = 0; j < a.length; j++) {
+            a[j].style.display = "table-row"
+          }
+        } else {
+          for(let j = 0; j < a.length; j++) {
+            a[j].style.display = "none"
+          }
+        }
+      }
+    }
+
+    function two () {
+      console.log(document.getElementById('ClubInput').value);
+      for(let i = 0; i < arrayType2.length; i++) {
+        //console.log("hi ", arrayType2[i]);
+        let a = document.getElementsByClassName(arrayType2[i]);
+        if (document.getElementById('ClubInput').value === arrayType2[i]) {
+          for(let j = 0; j < a.length; j++) {
+            a[j].style.display = "table-row"
+          }
+        } else {
+          for(let j = 0; j < a.length; j++) {
+            a[j].style.display = "none"
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

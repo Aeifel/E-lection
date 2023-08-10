@@ -41,29 +41,29 @@
 		<div class="card mx-auto" style="width: 27rem;height: 30rem;border-radius: 15px;">
 			<div class="card-body" style="margin: 10px; padding: 20px;">
 				<div align="center">
-					<span style="font-size: 2em;">Account Login!</span>
+					<span style="font-size: 2em;">Create account!</span>
 				</div>
 				<br>
 				<div align="center">
-					<span style="font-size: 1.2em;"> Enter organization details to register !</span>
+					<span style="font-size: 1.2em;"> Set up a username and password for your account!</span>
 				</div>
 				<br>
-		        <form method = "POST" action = "/createorg">
+		        <form method = "POST" action = "/signup">
 				<div width="100px">
-					<input type="text" name="orgname" class="form-control" placeholder="Enter organization name" width="100px" required>
+					<input type="text" name="name" class="form-control" placeholder="Enter username" width="100px" required>
 				</div>
 				<br>
 				<div>
-					<input type="password" name="orgpassword" class="form-control" placeholder="Enter organization password" width="100px" required>
+					<input type="password" name="password" class="form-control" placeholder="Enter password" width="100px" required>
 				</div>
 				<br>
 				<br>
 				<div align="center" style="margin: 0px; width: 100%;">
-					<button class="btn btn-secondary" style="margin: 0px;display: block;width: 100%;">REGISTER AS ORGANIZATION</button>
+					<button class="btn btn-secondary" style="margin: 0px;display: block;width: 100%;">SIGN UP</button>
 				</div>
 				<br>
-				<div>Click here to
-					<a href="/homepage" style="color: black;">Go back</a>
+				<div>Have an account already?
+					<a href="/login" style="color: black;">Log in</a>
 				</div>
 				<div>
 					

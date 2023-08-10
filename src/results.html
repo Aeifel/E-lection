@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    	.page{
+
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: start;
+    		align-content: stretch;
+
+    	}
+
+    	.top-pane{
+
+    		background-color: black;
+    		color: white;
+    		height: 200px;
+    		flex-grow: 3;
+    	}
+
+    	.card{
+		margin: 40px;
+		float: left;
+		width: 90%;
+		height: 300px;
+		border-radius: 20px;
+	}
+
+	.name{
+		float:  left;
+		margin:  5px;
+		padding:  10px;
+	}
+
+	.nominate{
+
+		float:  right;
+		margin:  5px;
+		padding:  10px;
+	}
+
+    </style>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<body>
+	<div class="page">
+		<div class="top-pane">
+			This is the top pane
+		</div>
+		<div class="bottom-page">
+			<div class="card">
+				<div class="card-body container">
+					<div class="row">
+					<div class="name col">
+						POST 
+					</div>
+					<button class="nominate col"> 
+						SUBMIT NOMINATION
+					</button>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-2">
+						NAME 1
+					</div>
+					<div class="col-8" style="background-color: black; color: black;">
+						RESULTS
+					</div>
+					<div class="col-2">
+						<button>
+							Vote
+						</button>
+					</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
